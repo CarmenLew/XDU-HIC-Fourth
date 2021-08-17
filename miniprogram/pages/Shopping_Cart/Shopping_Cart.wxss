@@ -1,0 +1,6 @@
+/* miniprogram/pages/Shopping_Cart/Shopping_Cart.wxss */
+.department{
+  width: 100%;
+  height: 100rpx;
+  font-size: 50rpx;
+}

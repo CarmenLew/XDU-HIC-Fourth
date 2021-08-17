@@ -1,0 +1,5 @@
+<!--miniprogram/pages/Shopping_Cart/Shopping_Cart.wxml-->
+<text>miniprogram/pages/Shopping_Cart/Shopping_Cart.wxml</text>
+<view class="department">已选择</view>
+<view wx:for="{{department_selected_id.data}}" class="department">{{item}}  {{department[item].name}}</view>
+

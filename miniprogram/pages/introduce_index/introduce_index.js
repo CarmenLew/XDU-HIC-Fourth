@@ -115,7 +115,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log(this.data.group)
+    getApp().globalData.group = this.data.group;
+    getApp().globalData.department = this.data.department;
   },
 
   /**
@@ -176,24 +178,42 @@ Page({
   },
   open_shopping_cart:function(e){
     console.log("click shopping cart")
+    var that = this
+    var id = this.data.select_department_id
+    wx.navigateTo({
+      url: '/pages/Shopping_Cart/Shopping_Cart',
+      success: function(res) {
+        // 通过eventChannel向被打开页面传送数据
+        res.eventChannel.emit('acceptDataFromOpenerPage', { data:id})
+      }
+    })
   },
   like:function(e){
-    console.log("click like")
     console.log(e)
     var id=e.target.dataset.id
     var isclick ="department["+id+"].isclick"
     console.log(isclick)
     if (this.data.department[id].isclick ){
-      console.log("??")
-    this.setData({
-       [isclick]: false
-    })}
+      console.log("cancel like")
+      this.setData({
+        [isclick]: false,
+     })
+    var new_select_id=[]
+    for (var i in this.data.select_department_id)
+    {
+      if (id!=this.data.select_department_id[i])
+      new_select_id.push(this.data.select_department_id[i])
+    }
+    this.data.select_department_id = new_select_id
+    console.log(this.data.select_department_id)
+    }
     else {
       console.log("change")
       this.setData({
-        [isclick]: true
+        [isclick]: true,
       })
-      console.log(this.data.department[id].isclick)
+      this.data.select_department_id.push(id)
+      console.log(this.data.select_department_id)
     }
   }
 })
