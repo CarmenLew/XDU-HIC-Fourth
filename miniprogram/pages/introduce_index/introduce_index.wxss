@@ -73,6 +73,7 @@ page{
   justify-content: center;
    align-items: center;
    -webkit-column-break-inside:avoid; /*避免元素被分割*/
+
    /*height: 100%;
    overflow: auto;*/
 }

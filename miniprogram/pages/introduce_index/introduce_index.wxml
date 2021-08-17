@@ -21,6 +21,7 @@
     <image src="{{department[item].img_src}}" class="department_img"></image>
     <view class="tiltle_and_like">
     <view class="department_title">{{department[item].name}}</view>
+    
     <image class="like" data-id="{{index}}"  src='{{department[item].isclick==true ?"/images/add_1.png":"/images/add_0.png"}}' bindtap="like"> </image>
   </view>
     <view class="department_text">{{department[item].text}}</view>

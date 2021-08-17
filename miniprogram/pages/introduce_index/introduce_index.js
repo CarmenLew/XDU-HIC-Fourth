@@ -190,7 +190,8 @@ Page({
   },
   like:function(e){
     console.log(e)
-    var id=e.target.dataset.id
+    var id=this.data.group[this.data.group_touch_id].contain[e.target.dataset.id]
+    console.log(id)
     var isclick ="department["+id+"].isclick"
     console.log(isclick)
     if (this.data.department[id].isclick ){
