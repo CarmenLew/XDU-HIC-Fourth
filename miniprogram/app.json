@@ -1,7 +1,9 @@
 {
   "pages": [
     "pages/introduce_index/introduce_index",
-    "pages/Shopping_Cart/Shopping_Cart"
+    "pages/Shopping_Cart/Shopping_Cart",
+    "pages/general_introduction/general_introduction",
+    "pages/detail_introduction/detail_introduction"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

@@ -1,11 +1,12 @@
 /* miniprogram/pages/introduce_index/introduce_index.wxss */
 page{
-  background-color: white;
+  background-color:#F8F8F8 100%;
 }
 .general_introduction{
   width: 90%;
-  height: 300rpx;
+  height: 292px;
   margin-left: 5%;
+  border-radius: 10px;
 }
 .general_introduction_img {
   width: 100%;
@@ -13,9 +14,11 @@ page{
 }
 .logos {
   width: 90%;
-  height: 180rpx;
+  height: 200rpx;
   margin: 5%;
+  margin-bottom: 0;
   display: flex;
+  background-color: #ffffff;
   /*border: 4rpx solid #ffffff;*/
   flex-direction: row;
   justify-content: center;
@@ -29,6 +32,7 @@ page{
   flex-direction: column;
   justify-content: center;
    align-items: center;
+   padding: 32rpx;
 }
 .logo_img{
   width:120rpx ;
@@ -40,40 +44,43 @@ page{
 .logo_text{
   font-size: 20 rpx;
   color:black;
+  font-weight: bold;
 }
 .Recommendations_Bar{
   display: flex;
-  font-size: 20px;
+  font-size: 40rpx;
   color: black;
-  background-color: white;
+
   width: 90%;
   margin: 5%;
   overflow-y: scroll;
   white-space: nowrap; 
 }
 .Recommendation{
-  height: 100%;
+  height: 90%;
   width: 100rpx;
   padding:25rpx;
   padding-top: 10rpx;
   padding-bottom: 10rpx;
+  
 }
 
 .department_display{
   column-count: 2; 
-  column-gap: 20rpx; 
+  column-gap: 30rpx; 
   width: 90%;
   align-self: center;
 
 }
 .departments{
-  width: 100%;
+  width: 310rpx;
   display: flex;
   flex-direction: column;
   justify-content: center;
    align-items: center;
    -webkit-column-break-inside:avoid; /*避免元素被分割*/
-
+  margin-bottom: 40rpx;
+  background-color:white ;
    /*height: 100%;
    overflow: auto;*/
 }
@@ -85,15 +92,20 @@ page{
   display: flex;
   flex-direction: row;
   align-items: center;
-  
+  margin-top: 40rpx;
 }
 .department_title{
   font-size: 40rpx;
+  
 }
 .like{
   height: 50rpx;
   width: 50rpx;
-  margin-left: 40rpx;
+  padding-left: 20rpx;
+}
+.department_text{
+  padding: 28rpx;
+  padding-top: 14rpx;
 }
 .bottom_blank{
   width: 100%;

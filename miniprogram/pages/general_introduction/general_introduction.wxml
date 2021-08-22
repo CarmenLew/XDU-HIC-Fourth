@@ -1,0 +1,3 @@
+<!--miniprogram/pages/general_introduction/general_introduction.wxml-->
+<image src="{{g_src}}" mode="widthFix" class="g_img"></image>
+<cover-image src="/images/g_back.png" class="g_back" bindtap="g_back"></cover-image>

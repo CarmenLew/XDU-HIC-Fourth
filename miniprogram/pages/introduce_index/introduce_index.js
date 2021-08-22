@@ -42,71 +42,98 @@ Page({
       {
         id:0,
         name:"#宣传组",
-        img_src:"/images/placeholder.png",
+       
         text:"俱乐部的公众号、QQ、微博都是你的哦~",
-        isclick:false
+        isclick:false,
+        s_src:"/images/xcz.png"
       },
       {
         id:1,
         name:"#策划组",
-        img_src:"/images/placeholder.png",
+       
         text:"我们一起来搞事情吧~",
-        isclick:false
+        isclick:false,
+        s_src:"/images/chz.png"
       },
       {
         id:2,
         name:"#人工智能组",
-        img_src:"/images/placeholder.png",
+        
         text:"来这里，肯努力，明天你就是技术大牛",
-        isclick:false
+        isclick:false,
+        s_src:"/images/rgznz.png"
       },
       {
         id:3,
         name:"#前后端组",
-        img_src:"/images/placeholder.png",
+       
         text:"想要自己动手写网站、APP、小程序吗？这个小程序就是我们开发的哦~",
-        isclick:false
+        isclick:false,
+        s_src:"/images/webz.png"
       },{
         id:4,
         name:"#硬件组",
-        img_src:"/images/placeholder.png",
+       
         text:"一行行代码，一条条电路，让电器“活过来”",
-        isclick:false
+        isclick:false,
+        s_src:"/images/yjz.png",
+        d_src:"/images/d_yjz.png"
       },
       {
         id:5,
         name:"#ACM组",
-        img_src:"/images/placeholder.png",
+       
         text:"ACM巨巨带你打ICPC",
-        isclick:false
+        isclick:false,
+        s_src:"/images/acmz.png"
       },
       {
         id:6,
         name:"#数模组",
-        img_src:"/images/placeholder.png",
+        
         text:"数模大神亲自指导把关，快来鸭~",
-        isclick:false
+        isclick:false,
+        s_src:"/images/smz.png"
       },
       {
         id:7,
         name:"#新媒体组",
-        img_src:"/images/placeholder.png",
+        
         text:"用镜头语言来讲述我们的故事",
-        isclick:false
+        isclick:false,
+        s_src:"/images/xmtz.png"
       },
       {
         id:8,
         name:"#设计组",
-        img_src:"/images/placeholder.png",
         text:"新人小组，期待你的加入!",
-        isclick:false
+        isclick:false,
+        s_src:"/images/sjz.png"
       },
       {
         id:9,
         name:"#外联组",
-        img_src:"/images/placeholder.png",
+        
         text:"来江湖结交各路好汉",
-        isclick:false
+        isclick:false,
+        s_src:"/images/wlz.png"
+      }
+    ],
+    g_introduction:[
+      {
+        id:0,
+        name:"俱乐部总介绍",
+        src:"/images/HIC_introduction.png"
+      },
+      {
+        id:1,
+        name:"花粉部总介绍",
+        src:"/images/pollen.png"
+      },
+      {
+        id:2,
+        name:"技术部总介绍",
+        src:"/images/technology.png"
       }
     ]
   },
@@ -188,6 +215,20 @@ Page({
       }
     })
   },
+  general_introduce:function(e){
+    console.log(e)
+    var that = this
+    var id = e.target.dataset.id
+    var g_src = this.data.g_introduction[id].src
+    console.log(g_src)
+    wx.navigateTo({
+      url: '/pages/general_introduction/general_introduction',
+      success: function(res) {
+        // 通过eventChannel向被打开页面传送数据
+        res.eventChannel.emit('acceptDataFromOpenerPage', { src:g_src })
+      }
+    })
+  },
   like:function(e){
     console.log(e)
     var id=this.data.group[this.data.group_touch_id].contain[e.target.dataset.id]
@@ -216,5 +257,19 @@ Page({
       this.data.select_department_id.push(id)
       console.log(this.data.select_department_id)
     }
+  },
+  detail_introduction:function(e){
+    var that = this
+    var id=this.data.group[this.data.group_touch_id].contain[e.currentTarget.dataset.id]
+    var d_src = this.data.department[id].d_src
+    console.log(d_src)
+    wx.navigateTo({
+      url: '/pages/detail_introduction/detail_introduction',
+      success: function(res) {
+        // 通过eventChannel向被打开页面传送数据
+        res.eventChannel.emit('acceptDataFromOpenerPage', { src:d_src })
+      }
+    })
+    
   }
 })

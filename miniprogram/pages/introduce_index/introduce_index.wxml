@@ -1,30 +1,29 @@
 <!--miniprogram/pages/introduce_index/introduce_index.wxml-->
 <view class="general_introduction">
-  <image src="/images/placeholder.png" mode="aspectFill" class="general_introduction_img"></image>
+  <image src="/images/HIC_head1.png" data-id="0" mode="aspectFit" class="general_introduction_img" bindtap="general_introduce"></image>
 </view>
-
 <view class="logos"> 
-<view class="logo" >
-  <image src="/images/placeholder.png" class="logo_img"></image>
-  <view class="logo_text">花粉部 </view>
+<view class="logo"  >
+  <image src="/images/p_logo.png" data-id="1"  mode="aspectFit" class="logo_img" bindtap="general_introduce"></image>
+  <view class="logo_text">花粉部</view>
 </view>
 <view class="logo">
-  <image src="/images/placeholder.png" class="logo_img"></image>
+  <image src="/images/t_logo.png" data-id="2" mode="aspectFit" class="logo_img" bindtap="general_introduce"></image>
   <view class="logo_text">技术部 </view>
 </view>
 </view>
 <view class="Recommendations_Bar">
-  <view wx:for="{{group}}" wx:key="id" data-id="{{index}}" class="Recommendation" bindtap="tap_group" style="{{index==group_touch_id? 'background-color: teal; border-radius: 20%; color:white;' : 'background-color: white ; '}}" > {{item.name}}</view>
+  <view wx:for="{{group}}" wx:key="id" data-id="{{index}}" class="Recommendation" bindtap="tap_group" style="{{index==group_touch_id? 'background-color: rgba(4, 4, 4, 100); border-radius: 30rpx; color:white;' : ' '}}" > {{item.name}}</view>
 </view>
 <view class="department_display">
   <view wx:for="{{group[group_touch_id].contain}}"  class="departments" >
-    <image src="{{department[item].img_src}}" class="department_img"></image>
+    <image src="{{department[item].s_src}}" mode="widthFix" class="department_img" data-id="{{index}}" bindtap="detail_introduction"></image>
     <view class="tiltle_and_like">
-    <view class="department_title">{{department[item].name}}</view>
+    <view class="department_title" data-id="{{index}}" bindtap="detail_introduction">{{department[item].name}}</view>
     
     <image class="like" data-id="{{index}}"  src='{{department[item].isclick==true ?"/images/add_1.png":"/images/add_0.png"}}' bindtap="like"> </image>
   </view>
-    <view class="department_text">{{department[item].text}}</view>
+    <view class="department_text" data-id="{{index}}" bindtap="detail_introduction">{{department[item].text}}</view>
   </view>
 </view>
 <view class="bottom_blank"></view>

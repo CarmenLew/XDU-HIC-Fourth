@@ -1,0 +1,14 @@
+/* miniprogram/pages/detail_introduction/detail_introduction.wxss */
+page{
+  height: 100%;
+  width: 100%;
+}
+.background_img{
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+}
+.d_img{
+  width: 100%;
+  background-image: ;
+}

@@ -1,0 +1,15 @@
+/* miniprogram/pages/general_introduction/general_introduction.wxss */
+.g_img{
+  width: 100%;
+  background-color: black;
+}
+.g_back{
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 18px;
+  left: 18px;
+  right: 0;
+
+}
