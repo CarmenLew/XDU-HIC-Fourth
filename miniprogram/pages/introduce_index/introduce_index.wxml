@@ -1,14 +1,14 @@
 <!--miniprogram/pages/introduce_index/introduce_index.wxml-->
 <view class="general_introduction">
-  <image src="/images/HIC_head1.png" data-id="0" mode="aspectFit" class="general_introduction_img" bindtap="general_introduce"></image>
+  <image src="https://i.loli.net/2021/08/24/HP9vhQYq4DCKI6S.png" data-id="0" mode="aspectFit" class="general_introduction_img" bindtap="general_introduce"></image>
 </view>
 <view class="logos"> 
 <view class="logo"  >
-  <image src="/images/p_logo.png" data-id="1"  mode="aspectFit" class="logo_img" bindtap="general_introduce"></image>
+  <image src="https://i.loli.net/2021/08/24/YDQSCTUkGZNHt58.png" data-id="1"  mode="aspectFit" class="logo_img" bindtap="general_introduce"></image>
   <view class="logo_text">花粉部</view>
 </view>
 <view class="logo">
-  <image src="/images/t_logo.png" data-id="2" mode="aspectFit" class="logo_img" bindtap="general_introduce"></image>
+  <image src="https://i.loli.net/2021/08/24/8WwUoSnh7GKAMPD.png" data-id="2" mode="aspectFit" class="logo_img" bindtap="general_introduce"></image>
   <view class="logo_text">技术部 </view>
 </view>
 </view>

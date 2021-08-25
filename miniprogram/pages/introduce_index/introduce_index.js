@@ -45,7 +45,8 @@ Page({
        
         text:"俱乐部的公众号、QQ、微博都是你的哦~",
         isclick:false,
-        s_src:"/images/xcz.png"
+        s_src:"https://i.loli.net/2021/08/24/SfsxVnJ2XlvYDM6.png",
+        d_src:"https://i.loli.net/2021/08/24/mdzgA7wTHK6cx2C.png"
       },
       {
         id:1,
@@ -53,7 +54,8 @@ Page({
        
         text:"我们一起来搞事情吧~",
         isclick:false,
-        s_src:"/images/chz.png"
+        s_src:"https://i.loli.net/2021/08/24/4W796pL2MXjwV8A.png",
+        d_src:"https://i.loli.net/2021/08/24/SQZ129X7wVvMHqP.png"
       },
       {
         id:2,
@@ -61,7 +63,8 @@ Page({
         
         text:"来这里，肯努力，明天你就是技术大牛",
         isclick:false,
-        s_src:"/images/rgznz.png"
+        s_src:"https://i.loli.net/2021/08/24/V6nTq8vREzG9cAF.png",
+        d_src:"https://i.loli.net/2021/08/24/jha1xwi2zbmpFVB.png"
       },
       {
         id:3,
@@ -69,15 +72,16 @@ Page({
        
         text:"想要自己动手写网站、APP、小程序吗？这个小程序就是我们开发的哦~",
         isclick:false,
-        s_src:"/images/webz.png"
+        s_src:"https://i.loli.net/2021/08/24/iwVxcgtJBCYRKPf.png",
+        d_src:"https://i.loli.net/2021/08/24/rCeGOuTIqivBlLN.png"
       },{
         id:4,
         name:"#硬件组",
        
         text:"一行行代码，一条条电路，让电器“活过来”",
         isclick:false,
-        s_src:"/images/yjz.png",
-        d_src:"/images/d_yjz.png"
+        s_src:"https://i.loli.net/2021/08/24/K9jbof3DiUgeN7p.png",
+        d_src:"https://i.loli.net/2021/08/24/Mjzb3c7imXtkSos.png"
       },
       {
         id:5,
@@ -85,7 +89,8 @@ Page({
        
         text:"ACM巨巨带你打ICPC",
         isclick:false,
-        s_src:"/images/acmz.png"
+        s_src:"https://i.loli.net/2021/08/24/CiQugrNGzpHZJOF.png",
+        d_src:"cloud://cloud1-6grlmnp6a2096931.636c-cloud1-6grlmnp6a2096931-1305879893/images/d_acm.png"
       },
       {
         id:6,
@@ -93,7 +98,8 @@ Page({
         
         text:"数模大神亲自指导把关，快来鸭~",
         isclick:false,
-        s_src:"/images/smz.png"
+        s_src:"https://i.loli.net/2021/08/24/KqJ3uAzGneyUd8s.png",
+        d_src:"https://i.loli.net/2021/08/24/jUeF5tsiDAfSh34.png"
       },
       {
         id:7,
@@ -101,14 +107,16 @@ Page({
         
         text:"用镜头语言来讲述我们的故事",
         isclick:false,
-        s_src:"/images/xmtz.png"
+        s_src:"https://i.loli.net/2021/08/24/UjNoMIT5dacH12q.png",
+        d_src:"https://i.loli.net/2021/08/24/h5AZuomn9WbUwte.png"
       },
       {
         id:8,
         name:"#设计组",
         text:"新人小组，期待你的加入!",
         isclick:false,
-        s_src:"/images/sjz.png"
+        s_src:"https://i.loli.net/2021/08/24/njG8KqQ1Eyu9IvZ.png",
+        d_src:"https://i.loli.net/2021/08/24/kPQqyDgNUvYJm5l.png"
       },
       {
         id:9,
@@ -116,24 +124,25 @@ Page({
         
         text:"来江湖结交各路好汉",
         isclick:false,
-        s_src:"/images/wlz.png"
+        s_src:"https://i.loli.net/2021/08/24/m8XgOzVRQnuJW2v.png",
+        d_src:"https://i.loli.net/2021/08/24/xVZaS3dXnqRgc5Q.png"
       }
     ],
     g_introduction:[
       {
         id:0,
         name:"俱乐部总介绍",
-        src:"/images/HIC_introduction.png"
+        src:"https://i.loli.net/2021/08/24/DlcvwgiZEhL29OB.png"
       },
       {
         id:1,
         name:"花粉部总介绍",
-        src:"/images/pollen.png"
+        src:"https://i.loli.net/2021/08/24/RCsmWtK4y5vDbaU.png"
       },
       {
         id:2,
         name:"技术部总介绍",
-        src:"/images/technology.png"
+        src:"https://i.loli.net/2021/08/24/PwMcTdxjzQiGOvY.png"
       }
     ]
   },
@@ -142,7 +151,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(this.data.group)
     getApp().globalData.group = this.data.group;
     getApp().globalData.department = this.data.department;
   },
@@ -157,8 +165,8 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-
+  onShow: function (res) {
+   
   },
 
   /**
@@ -197,26 +205,47 @@ Page({
   },
   /*用户点击推荐栏中的某个类别*/
   tap_group:function(e){
-    console.log(e)
+    
     var id = e.target.dataset.id
     this.setData({
       group_touch_id:id
     })
   },
   open_shopping_cart:function(e){
-    console.log("click shopping cart")
+    
     var that = this
     var id = this.data.select_department_id
+    /*
     wx.navigateTo({
       url: '/pages/Shopping_Cart/Shopping_Cart',
       success: function(res) {
         // 通过eventChannel向被打开页面传送数据
-        res.eventChannel.emit('acceptDataFromOpenerPage', { data:id})
+        res.eventChannel.emit('acceptDataFromOpenerPage', { 
+          data:id
+          
+        })
+      }
+    })*/
+    wx.navigateTo({
+      url: '/pages/Shopping_Cart/Shopping_Cart',
+      events: {
+        // 为指定事件添加一个监听器，获取被打开页面传送到当前页面的数据
+        acceptDataFromOpenedPage: function(data) {
+          console.log(data)
+        },
+        someEvent: function(data) {
+          console.log(data)
+        }
+      },
+      success: function(res) {
+        // 通过eventChannel向被打开页面传送数据
+        res.eventChannel.emit('acceptDataFromOpenerPage', { data: id })
+        console.log("emit data")
       }
     })
   },
   general_introduce:function(e){
-    console.log(e)
+    
     var that = this
     var id = e.target.dataset.id
     var g_src = this.data.g_introduction[id].src
@@ -232,11 +261,12 @@ Page({
   like:function(e){
     console.log(e)
     var id=this.data.group[this.data.group_touch_id].contain[e.target.dataset.id]
-    console.log(id)
+    this.add_to_cart(id)
+  },
+  add_to_cart:function(id){
+    console.log("chufa")
     var isclick ="department["+id+"].isclick"
-    console.log(isclick)
     if (this.data.department[id].isclick ){
-      console.log("cancel like")
       this.setData({
         [isclick]: false,
      })
@@ -246,15 +276,17 @@ Page({
       if (id!=this.data.select_department_id[i])
       new_select_id.push(this.data.select_department_id[i])
     }
-    this.data.select_department_id = new_select_id
+    this.setData({
+      select_department_id:new_select_id
+    })
     console.log(this.data.select_department_id)
     }
     else {
-      console.log("change")
-      this.setData({
-        [isclick]: true,
-      })
       this.data.select_department_id.push(id)
+      this.setData({
+        select_department_id:this.data.select_department_id,
+        [isclick]: true
+      })
       console.log(this.data.select_department_id)
     }
   },
@@ -262,12 +294,27 @@ Page({
     var that = this
     var id=this.data.group[this.data.group_touch_id].contain[e.currentTarget.dataset.id]
     var d_src = this.data.department[id].d_src
-    console.log(d_src)
+    var t_group = this.data.group[3].contain
+   
+    let f = false; //f==false则代表点击的是花粉部的小组，否则为技术部的小组
+    for (var i in t_group){
+      if ( id == t_group[i]){
+        f = true
+      }
+    }
+    var background_img_src =""
+    if (f) background_img_src = "https://i.loli.net/2021/08/24/pJxLBoZcmbXyQif.png" 
+    else background_img_src ="https://i.loli.net/2021/08/24/goNF8mWUPtZywMO.png"
     wx.navigateTo({
       url: '/pages/detail_introduction/detail_introduction',
       success: function(res) {
         // 通过eventChannel向被打开页面传送数据
-        res.eventChannel.emit('acceptDataFromOpenerPage', { src:d_src })
+        res.eventChannel.emit('acceptDataFromOpenerPage', { 
+          src:d_src,
+          background_img_src:background_img_src,
+          id:id,
+          select_department_id:that.data.select_department_id
+         })
       }
     })
     

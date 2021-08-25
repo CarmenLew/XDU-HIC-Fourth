@@ -1,5 +1,38 @@
 <!--miniprogram/pages/Shopping_Cart/Shopping_Cart.wxml-->
-<text>miniprogram/pages/Shopping_Cart/Shopping_Cart.wxml</text>
-<view class="department">已选择</view>
-<view wx:for="{{department_selected_id.data}}" class="department">{{item}}  {{department[item].name}}</view>
+<checkbox-group bindchange="checkboxChange">
+<view wx:if="{{selected_g_t !== []}}"> <!--技术部-->
+<view class="title">
+  <image class="title_img" src="/images/t_logo.png"> </image>
+  <view class="title_text">技术部</view>
+</view>
+<view wx:for="{{selected_g_t}}" class="department">
+  <checkbox  class="checkboxs"  value="{{item}}"> </checkbox>
+  <image class="department_img" src="{{department[item].s_src}}"></image>
+  <view class="department_text">{{department[item].name}}</view>
+</view>
+</view> 
+
+<view wx:if="{{selected_g_p !== []}}"> <!--花粉部-->
+<view class="title">
+  <image class="title_img" src="/images/p_logo.png"> </image>
+  <view class="title_text">花粉部</view>
+</view>
+<view wx:for="{{selected_g_p}}" class="department">
+  <checkbox  class="checkboxs"  value="{{item}}"> </checkbox>
+  <image class="department_img" src="{{department[item].s_src}}"></image>
+  <view class="department_text">{{department[item].name}}</view>
+</view>
+</view> 
+
+</checkbox-group>
+
+<view class="tabbar_bottom">
+  <view bindtap="select_all" class="bottom_radio"></view>
+  <view class="selected_length">已选中{{final_selected.length}}项</view>
+  <view class="submit">确认提交</view>
+
+</view>
+
+
+
 

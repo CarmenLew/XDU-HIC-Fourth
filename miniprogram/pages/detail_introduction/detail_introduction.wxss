@@ -1,14 +1,43 @@
 /* miniprogram/pages/detail_introduction/detail_introduction.wxss */
 page{
-  height: 100%;
+ 
   width: 100%;
 }
 .background_img{
   z-index: -1;
   position: absolute;
   width: 100%;
+  
 }
 .d_img{
-  width: 100%;
-  background-image: ;
+  width: 86%;
+  margin-left: 7%;
+}
+.bottom_button{
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: fixed;
+  bottom: 100rpx;
+}
+.back{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+.add{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+.cart{
+  width: 50rpx;
+  height: 50rpx;
+  position: fixed;
+  top:50rpx;
+  right: 50rpx;
 }

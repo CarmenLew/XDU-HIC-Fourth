@@ -19,13 +19,12 @@ Page({
     eventChannel.on('acceptDataFromOpenerPage', function(data) {
       console.log(data)
       that.setData({
-        d_src:data.src
+        d_src:data.src,
+        background_img_src:data.background_img_src,
+        id:data.id
       })
     })
-    this.setData({
-      background_img_src:"/images/tg_background.png"
-    })
-    console.log(this.data.d_src)
+
   },
 
   /**
@@ -75,5 +74,13 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  back:function(){
+    wx.navigateBack({
+      delta: 1
+    })
+  },
+  add:function(){
+    
   }
 })

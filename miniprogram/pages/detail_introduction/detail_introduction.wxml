@@ -1,3 +1,8 @@
 <!--miniprogram/pages/detail_introduction/detail_introduction.wxml-->
 <image src="{{background_img_src}}" class="background_img" mode="widthFix"> </image>
 <image src="{{d_src}}" mode="widthFix" class="d_img"></image>
+
+<view class="bottom_button">
+  <image class="back" bindtap="back" src="/images/back_1.png" ></image>
+  <image class="add" bindtap="add" src=""></image>
+</view>
