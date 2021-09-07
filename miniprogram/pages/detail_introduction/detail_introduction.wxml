@@ -2,7 +2,13 @@
 <!--image src="{{background_img_src}}" class="background_img" mode="aspectFit"> </image-->
 <image src="{{d_src}}"  mode="aspectFill" class="d_img"></image>
 
+<view class="shopping_cart">
+  <view class="red_point" style='background-color:{{red_point_color}}' ></view>
+<image src="/images/shopping_cart.png" class="cart" bindtap="open_shopping_cart"></image>
+
+</view>
+
 <view class="bottom_button">
   <image class="back" bindtap="back" src="/images/back_1.png" ></image>
-  <image class="add" bindtap="add" src=""></image>
+  <image class="add" bindtap="add" src="/images/add.png"></image>
 </view>

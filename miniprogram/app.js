@@ -3,6 +3,8 @@ App({
   globalData:{
     group:[],
     department:[],
+    select_department_id:[],
+    is_add:false,
       nm: "HIC",  //nickname
       code: '',
       haveGetOpenId: false,

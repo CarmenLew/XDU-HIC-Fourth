@@ -168,7 +168,17 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function (res) {
-   
+    if (getApp().globalData.is_add){
+      let length = getApp().globalData.select_department_id.length
+      let add_id = getApp().globalData.select_department_id[length-1]
+      console.log(add_id)
+      let is_click ="department["+add_id+"].isclick"
+      this.setData({
+        select_department_id:getApp().globalData.select_department_id,
+        [is_click]:true
+      })
+      this.red_point()
+    }
   },
 
   /**
@@ -217,28 +227,8 @@ Page({
     
     var that = this
     var id = this.data.select_department_id
-    /*
     wx.navigateTo({
       url: '/pages/Shopping_Cart/Shopping_Cart',
-      success: function(res) {
-        // 通过eventChannel向被打开页面传送数据
-        res.eventChannel.emit('acceptDataFromOpenerPage', { 
-          data:id
-          
-        })
-      }
-    })*/
-    wx.navigateTo({
-      url: '/pages/Shopping_Cart/Shopping_Cart',
-      events: {
-        // 为指定事件添加一个监听器，获取被打开页面传送到当前页面的数据
-        acceptDataFromOpenedPage: function(data) {
-          console.log(data)
-        },
-        someEvent: function(data) {
-          console.log(data)
-        }
-      },
       success: function(res) {
         // 通过eventChannel向被打开页面传送数据
         res.eventChannel.emit('acceptDataFromOpenerPage', { data: id })
@@ -251,12 +241,14 @@ Page({
     var that = this
     var id = e.target.dataset.id
     var g_src = this.data.g_introduction[id].src
+    var g_name = this.data.g_introduction[id].name
     console.log(g_src)
     wx.navigateTo({
       url: '/pages/general_introduction/general_introduction',
       success: function(res) {
         // 通过eventChannel向被打开页面传送数据
-        res.eventChannel.emit('acceptDataFromOpenerPage', { src:g_src })
+        res.eventChannel.emit('acceptDataFromOpenerPage', { src:g_src ,
+        name:g_name})
       }
     })
   },
@@ -264,6 +256,11 @@ Page({
     console.log(e)
     var id=this.data.group[this.data.group_touch_id].contain[e.target.dataset.id]
     this.add_to_cart(id)
+    this.red_point()
+    getApp().globalData.select_department_id = this.data.select_department_id
+    console.log( getApp().globalData.select_department_id)
+  },
+  red_point:function(){
     if (this.data.select_department_id.length==0){ 
       //未知错误：全部取消like后判断 this.data.select_department_id == [] 也为false，随后改为判断length
       this.setData({
@@ -301,6 +298,7 @@ Page({
       })
       console.log(this.data.select_department_id)
     }
+
   },
   detail_introduction:function(e){
     var that = this
@@ -324,8 +322,7 @@ Page({
         res.eventChannel.emit('acceptDataFromOpenerPage', { 
           src:d_src,
           background_img_src:background_img_src,
-          id:id,
-          select_department_id:that.data.select_department_id
+          id:id
          })
       }
     })

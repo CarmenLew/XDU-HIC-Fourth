@@ -10,11 +10,12 @@
 page{
   width: 100%;
   height: auto;
+  background-color: black;
 }
 .g_img{
   width: 100%;
   height: auto;
-  background-color: black;
+  display: flex;
   animation:fadeIn 2s;
 }
 .g_back{
@@ -26,4 +27,12 @@ page{
   left: 18px;
   right: 0;
 
+}
+.QRcode{
+  width: 60%;
+  padding: 20%;
+  display: flex;
+  align-self: center;
+  position: relative;
+  bottom: 400rpx;
 }

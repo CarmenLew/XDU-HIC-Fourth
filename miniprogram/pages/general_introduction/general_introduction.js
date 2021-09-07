@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    load_code:true
   },
 
   /**
@@ -19,7 +19,8 @@ Page({
     eventChannel.on('acceptDataFromOpenerPage', function(data) {
       console.log(data)
       that.setData({
-        g_src:data.src
+        g_src:data.src,
+        g_name:data.name
       })
     })
     console.log(this.data.g_src)
@@ -77,5 +78,16 @@ Page({
     wx.navigateBack({
       delta: 1
     })
+  },
+  load_image:function(e){
+    console.log(e)
+    var that = this
+    setTimeout(() => {
+      that.setData({
+        image_height:e.detail.height,
+        load_code:false
+      })
+    }, 1000);
+    
   }
 })

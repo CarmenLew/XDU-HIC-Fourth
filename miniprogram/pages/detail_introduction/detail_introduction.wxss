@@ -43,15 +43,27 @@ page{
   border-radius: 50%;
 }
 .add{
-  width: 100rpx;
-  height: 100rpx;
+  width: 80rpx;
+  height: 80rpx;
   border-radius: 50%;
+}
+.shopping_cart{
+  width: 60rpx;
+  height: 70rpx;
+  position: fixed;
+  top:50rpx;
+  right: 50rpx;
 }
 .cart{
   width: 50rpx;
   height: 50rpx;
-  position: fixed;
-  top:50rpx;
-  right: 50rpx;
+}
+.red_point{
+  width: 15rpx;
+  height: 15rpx;
+  border-radius: 50%;
+  position: absolute;
+  right: 0;
+  top:0;
 }
 

@@ -8,6 +8,7 @@
   <view class="userinfo" data-id="{{index}}" bindtap="goToUserInfo" >
     <image src="{{item.avatarUrl}}" class="userinfo-head" data-id="{{index}}"  mode="scaleToFill"></image>
     <view class="userinfo-name" data-id="{{index}}"  >{{item.Name}}</view>
+    
     <!-- <view class="userinfo-number">{{numberUrl}}</view> -->
   </view>
 

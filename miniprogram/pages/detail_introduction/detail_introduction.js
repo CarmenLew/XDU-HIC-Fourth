@@ -5,13 +5,16 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    is_add:false,
+    red_point_color:"white"
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.red_point()
+    getApp().globalData.is_add = false;
     console.log(options)
     var that = this
     const eventChannel = this.getOpenerEventChannel()
@@ -52,7 +55,10 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    console.log("unload")
+    if (this.data.is_add){
+      getApp().globalData.is_add=true
+    }
   },
 
   /**
@@ -81,6 +87,46 @@ Page({
     })
   },
   add:function(){
-    
+    var select_department_id = getApp().globalData.select_department_id
+    console.log(select_department_id)
+    let flag =true;
+    for (let i in select_department_id){
+      if (this.data.id == select_department_id[i]){
+        flag= false
+      }
+    }
+    if (flag){
+      select_department_id.push(this.data.id)
+      this.setData({
+        is_add:true
+      })
+    }
+    console.log(select_department_id)
+    console.log(getApp().globalData.select_department_id)
+    this.red_point()
+  },
+  red_point:function(){
+    if (getApp().globalData.select_department_id.length==0){ 
+      //未知错误：全部取消like后判断 this.data.select_department_id == [] 也为false，随后改为判断length
+      this.setData({
+        red_point_color:"white"
+      })
+    }else{
+      this.setData({
+        red_point_color:"red"
+      })
+    }
+  },
+  open_shopping_cart:function(){
+    var that = this
+    var id = getApp().globalData.select_department_id
+    wx.navigateTo({
+      url: '/pages/Shopping_Cart/Shopping_Cart',
+      success: function(res) {
+        // 通过eventChannel向被打开页面传送数据
+        res.eventChannel.emit('acceptDataFromOpenerPage', { data: id })
+        console.log("emit data")
+      }
+    })
   }
 })

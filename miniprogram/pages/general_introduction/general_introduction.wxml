@@ -1,3 +1,6 @@
 <!--miniprogram/pages/general_introduction/general_introduction.wxml-->
-<image src="{{g_src}}"  mode="widthFix" class="g_img"></image>
+
+<image src="{{g_src}}"  mode="widthFix" bindload="load_image" class="g_img"></image>
+<image hidden="{{load_code}}" src="cloud://cloud1-6grlmnp6a2096931.636c-cloud1-6grlmnp6a2096931-1305879893/images/花粉俱乐部公众号二维码.jpg" class="QRcode"></image>
 <cover-image src="/images/g_back.png" class="g_back" bindtap="g_back"></cover-image>
+
