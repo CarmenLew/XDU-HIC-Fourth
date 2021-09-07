@@ -1,5 +1,19 @@
 //app.js
 App({
+  globalData:{
+    group:[],
+    department:[],
+      nm: "HIC",  //nickname
+      code: '',
+      haveGetOpenId: false,
+      openId: '',
+      avatarUrl:"../../images/hic-head.jpg" , 
+      Name:"HIC",
+    userinfo:{
+      avatarUrl:"../../images/hic-head.jpg" ,  //头像
+      Name:"HIC"
+    }
+  },
   onLaunch: function () {
     if (!wx.cloud) {
       console.error('请使用 2.2.3 或以上的基础库以使用云能力')
@@ -13,7 +27,5 @@ App({
         traceUser: true,
       })
     }
-
-    this.globalData = {}
   }
 })

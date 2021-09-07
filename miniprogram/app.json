@@ -1,23 +1,24 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/getOpenId/index",
-    "pages/getMiniProgramCode/index",
-    "pages/deployService/index",
-    "pages/createCollection/index",
-    "pages/uploadFile/index",
-    "pages/selectRecord/index",
-    "pages/updateRecord/index",
-    "pages/updateRecordResult/index",
-    "pages/updateRecordSuccess/index",
-    "pages/sumRecord/index",
-    "pages/sumRecordResult/index"
+    
+    "pages/welcome/index",
+    "pages/user/user",
+    "pages/edit_userinfo/edit_userinfo",
+    "pages/login/index",
+    "pages/introduce_index/introduce_index",
+    "pages/Shopping_Cart/Shopping_Cart",
+    "pages/general_introduction/general_introduction",
+    "pages/detail_introduction/detail_introduction",
+    "pages/interview/interview",
+    "pages/searchresult/searchresult",
+    "pages/userinfo/userinfo",
+    "pages/newuser_edit_info/newuser_edit_info"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F6F6F6",
-    "navigationBarTitleText": "云开发 QuickStart",
+    "navigationBarTitleText": "HIC第四区",
     "navigationBarTextStyle": "black"
   },
   "sitemapLocation": "sitemap.json",
