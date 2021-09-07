@@ -1,0 +1,54 @@
+<!--miniprogram/pages/edit_userinfo/edit_userinfo.wxml-->
+<image src="/images/bg.jpg" mode="aspectFill" class="background" ></image>
+<view class="userinfo">
+<view class="userinfo-head">
+  <image src="{{userinfo.avatarUrl}}"></image>
+</view>
+</view>
+
+<form class="text" bindsubmit="bindFormSubmit">
+    <view class="input_line">
+    <text class="term">姓名:</text>
+    <input class="input"  type="text" name="Name" value="{{userinfo.Name}}"></input>
+   </view>
+   <view class="input_line">
+    <text class="term" >性别:</text>
+    <radio-group name="gender" style="margin-right: 40rpx; width:50%; display:flex; justifly-content:space-around">
+      <label><radio style="margin-right:20rpx" value="1"/>男</label>
+      <label><radio style="margin-left:20rpx" value="0"/>女</label>
+    </radio-group>
+   </view>
+
+   <view class="input_line">
+    <text class="term">生辰:</text>
+    <input class="input"  type="text" name="birthday" value="{{userinfo.birthday}}"></input>
+   </view>
+   <view class="input_line">
+    <text class="term">年级:</text>
+    <input class="input"  type="text" name="grade" value="{{userinfo.grade}}"></input>
+   </view>
+   <view class="input_line">
+    <text class="term">专业/大类:</text>
+    <input class="input"  type="text" name="professional" value="{{userinfo.professional}}"></input>
+   </view>
+
+   <view class="input_line">
+    <text class="term">学号:</text>
+    <input class="input"  type="text" name="school_id" value="{{userinfo.school_id}}"></input>
+   </view>
+
+   <view class="input_line">
+    <text class="term">手机号:</text>
+    <input class="input"  type="text" name="phone" value="{{userinfo.phone}}"></input>
+   </view>
+
+   <view class="input_line">
+    <text class="term">个人介绍:</text>
+    <textarea class="input"  type="text" name="Personal_introduction" cols="30" rows="10" maxlength="-1" value="{{userinfo.Personal_introduction}}"></textarea>
+   </view>
+   <!--性别，年级，生辰，专业/大类，学号，手机号，个人介绍-->
+   <button form-type="submit"> 保存 </button>
+</form>
+  
+  
+

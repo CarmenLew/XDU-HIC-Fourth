@@ -1,0 +1,21 @@
+<!--pages/searchresult/searchresult.wxml-->
+<view class="search" >
+  <input type="text" class="search-input" bindinput="bindKeyInput"></input>
+  <image class="search-img" src="/images/search2.png" bindtap="search"></image>
+</view>
+
+<view class="user" wx:for="{{stuinfo}}" wx:for-index="idx" wx:for-item="stuinfo" >
+  <view class="userinfo" bindtap="goToUserInfo">
+    <image src="{{stuinfo.userhead}}" class="userinfo-head" mode="scaleToFill"></image>
+    <view class="userinfo-name">{{stuinfo.name}}</view>
+    <!-- <view class="userinfo-number">{{numberUrl}}</view> -->
+  </view>
+
+  <view class="button">
+    <button class="agree"
+      style="width: 110rpx; height: 50rpx; margin-right: 20rpx; padding: 0rpx;font-size: 25rpx; border-radius: 60rpx;" bindtap="Agree">同意</button>
+    <button class="disagree"
+      style="width: 110rpx; height: 50rpx; margin-left: 20rpx;margin-right: 20rpx; padding: 0rpx;font-size: 25rpx; border-radius: 60rpx;">拒绝</button>
+  </view>
+
+</view>

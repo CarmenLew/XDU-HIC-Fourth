@@ -1,0 +1,165 @@
+/* miniprogram/pages/introduce_index/introduce_index.wxss */
+page{
+  background-color:#F8F8F8 100%;
+}
+.general_introduction{
+  width: 90%;
+  height: 292px;
+  margin-left: 5%;
+  border-radius: 10px;
+}
+.general_introduction_img {
+  width: 100%;
+  height: 100%;
+}
+.logos {
+  width: 90%;
+  height: 200rpx;
+  margin: 5%;
+  margin-bottom: 0;
+  display: flex;
+  background-color: #ffffff;
+  /*border: 4rpx solid #ffffff;*/
+  flex-direction: row;
+  justify-content: center;
+   align-items: center;
+  
+}
+.logo{
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+   align-items: center;
+   padding: 32rpx;
+}
+.logo_img{
+  width:88rpx ;
+  height: 88rpx;
+  margin-left: 15%;
+  margin-right: 15%;
+  border-radius: 50%;
+}
+.logo_text{
+  font-size: 20 rpx;
+  color:black;
+  font-weight: bold;
+}
+.Recommendations_Bar{
+  display: flex;
+  font-size: 40rpx;
+  color: black;
+  width: 90%;
+  margin: 5%;
+  justify-items: center;
+  align-items: center;
+  overflow-y: scroll;
+  white-space: nowrap; 
+}
+.Recommendation{
+  height: 90%;
+  width: 100rpx;
+  padding:25rpx;
+  text-align:center;
+  margin: auto;
+  align-content: center;
+  justify-content: center;
+  font-size: 28rpx;
+  font-weight: bold;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+  
+}
+
+.department_display{
+  column-count: 2; 
+  column-gap: 30rpx; 
+  width: 90%;
+  align-self: center;
+
+}
+.departments{
+  width: 310rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+   align-items: center;
+   -webkit-column-break-inside:avoid; /*避免元素被分割*/
+  margin-bottom: 40rpx;
+  background-color:white ;
+   /*height: 100%;
+   overflow: auto;*/
+}
+.department_img{
+  width: 100%;
+  
+}
+.tiltle_and_like{
+  width: 94%;
+  padding: 3%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 22rpx;
+}
+.department_title{
+  font-size: 30rpx;
+  
+}
+.like{
+  height: 36rpx;
+  width: 36rpx;
+  padding-left: 20rpx;
+}
+.department_text{
+  width: 90%;
+  font-size: 20rpx;
+  padding: 5%;
+  padding-top: 14rpx;
+}
+.bottom_blank{
+  width: 100%;
+  height: 100px;
+}
+.bottom_tabbar{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 96rpx;
+  background: white;
+  display: flex;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+.tab-bar-border {
+  background-color: rgba(0, 0, 0, 0.33);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 2rpx;
+  transform: scaleY(0.5);
+}
+.bottom_tabbar_view {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.bottom_tabbar_img{
+  width: 54rpx;
+  height: 54rpx;
+}
+.red_point{
+  width: 15rpx;
+  height: 15rpx;
+  border-radius: 50%;
+  position: relative;
+  bottom: 55rpx;
+  left: 30rpx;
+ 
+}

@@ -1,0 +1,66 @@
+<!--miniprogram/pages/user/user.wxml-->
+<image class='background' src="../../images/bg.jpg" mode="aspectFill"></image>
+
+
+<view class="userinfo">
+  <image class="head-img"  src="{{userinfo.avatarUrl}}"></image>
+  <view class="info_right">
+    <view class="name_line">
+      <text class='name'>{{userinfo.Name}}</text>
+      <image src="/images/antFill-edit.svg" class="edit_userinfo" bindtap="edit_userinfo" ></image>
+    </view>
+    <view class="title_line">
+      <image class='lev' src="../../images/lev.svg"></image>
+      <view class = 'intro' bindtap="edit_title">{{userinfo.title}}</view>
+    </view>
+  </view>
+</view>
+
+<view class='square' wx:if="{{is_admin>0}}" style="top: 400rpx;">
+  <view class="square_top">
+  <text class='text-top'>面试</text>
+  <view class="buttons">
+    <text class="buttons-text" bindtap="interview">审一审</text>
+  </view>
+</view>
+  <text class='text-intro'>您有新的面试信息需要处理</text>
+  
+</view>
+
+<view class='square' wx:if="{{is_member}}" style="top: 680rpx;">
+  <view class="square_top">
+  <text class='text-top'>论坛</text>
+  <view class="buttons">
+    <text class="buttons-text"  bindtap="not_open">逛一逛</text>
+  </view>
+</view>
+  <text class='text-intro'>随时随地发现新鲜事儿</text>
+  
+</view>
+
+<view class='square' wx:if="{{is_member}}" style="top: 960rpx;">
+ <view class="square_top">
+  <text class='text-top'>好友</text>
+  <view class="buttons">
+    <text class="buttons-text"  bindtap="not_open">聊一聊</text>
+  </view>
+</view>
+  <text class='text-intro'>有人找你聊天哦</text>
+  
+</view>
+
+
+<view class='square' style="top: 1240rpx;">
+ <view class="square_top">
+  <text class='text-top'>我们</text>
+  <view class="buttons">
+    <text class="buttons-text" bindtap="look" >看一看</text>
+  </view>
+</view>
+  <text class='text-intro' style="top: 120rpx;" >欢迎加入我们</text>
+  <text class='text-intro' style="top: 160rpx;">期待与你相遇</text>
+  
+</view>
+
+
+

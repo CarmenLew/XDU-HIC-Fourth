@@ -1,0 +1,54 @@
+<!--miniprogram/pages/newuser_edit_info/newuser_edit_info.wxml-->
+<image src="/images/bg.jpg" mode="aspectFill" class="background" ></image>
+<view class="userinfo">
+<view class="userinfo-head">
+  <image src="{{avatarUrl}}"></image>
+</view>
+</view>
+
+<form class="text" bindsubmit="bindFormSubmit">
+    <view class="input_line">
+    <text class="term">怎么称呼:</text>
+    <input class="input"  type="text" name="Name"></input>
+   </view>
+   <view class="input_line">
+    <text class="term" >性别:</text>
+    <radio-group name="gender" style="margin-right: 40rpx; width:50%; display:flex; flex-direction:column " >
+      <label><radio style="margin-right:20rpx" value="1"/>我是小哥哥</label>
+      <label><radio style="margin-right:20rpx" value="0"/>我是小姐姐</label>
+    </radio-group>
+   </view>
+
+   <view class="input_line">
+    <text class="term">生辰:</text>
+    <input class="input"  type="text" name="birthday" placeholder="例：2000.05.21"></input>
+   </view>
+   <view class="input_line">
+    <text class="term">年级:</text>
+    <input class="input"  type="text" name="grade"  placeholder="例：2020级"></input>
+   </view>
+   <view class="input_line">
+    <text class="term">专业/大类:</text>
+    <input class="input"  type="text" name="professional" placeholder="例：计算机类"></input>
+   </view>
+
+   <view class="input_line">
+    <text class="term">学号:</text>
+    <input class="input"  type="text" name="school_id" placeholder="例：20009201322 *必填"></input>
+   </view>
+
+   <view class="input_line">
+    <text class="term">怎么联系呀:</text>
+    <input class="input"  type="text" name="phone" placeholder="手机号码哦..."></input>
+   </view>
+
+   <view class="input_line">
+    <text class="term">想了解你更多：</text>
+    <textarea class="input" placeholder="兴趣爱好、理想目标以及交友宣言什么的都可以哦~畅所欲言呀..." type="text" name="Personal_introduction" cols="30" rows="10" maxlength="-1"></textarea>
+   </view>
+   <!--性别，年级，生辰，专业/大类，学号，手机号，个人介绍-->
+   <button form-type="submit"> 保存 </button>
+</form>
+  
+  
+

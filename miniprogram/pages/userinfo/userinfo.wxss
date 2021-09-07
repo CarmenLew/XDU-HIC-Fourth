@@ -1,0 +1,60 @@
+/* pages/userinfo/userinfo.wxss */
+
+.userinfo {
+  font-size: 30rpx;
+  line-height: 100rpx;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  margin-left: 90rpx;
+  color: rgba(57, 64, 68, 100);
+  font-size: 16px;
+  text-align: left;
+  font-family: 方正工业黑-标准;
+}
+
+.userinfo-head {
+  margin-top: 60rpx;
+  display: flex;
+  justify-content: center;
+}
+.userinfo-head image{
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+}
+
+
+.feedback-title {
+  margin-top: 40rpx;
+  margin-bottom: 20rpx;
+  margin-left: 50rpx;
+}
+
+.feedback-text {
+  background-color: rgba(206, 206, 206, 0.5);
+  height: 200rpx;
+  width: 82%;
+  margin-top: 20rpx;
+  margin-left: 5%;
+  margin-right: 5%;
+  padding: 4%;
+  border-radius: 20rpx;
+  font-size: 13px;
+  line-height: 20px;
+  font-family: PingFangSC-regular;
+}
+
+.check-img {
+  height: 44px;
+  width: 44px;
+  margin-top: 40rpx;
+  margin-bottom: 40rpx;
+  margin-left: 44.6695%;
+  /* margin-right: 60rpx; */
+  border-radius: 100%;
+}

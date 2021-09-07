@@ -1,0 +1,40 @@
+<!--miniprogram/pages/introduce_index/introduce_index.wxml-->
+<view class="general_introduction">
+  <image src="https://i.loli.net/2021/08/24/HP9vhQYq4DCKI6S.png" data-id="0" mode="aspectFit" class="general_introduction_img" bindtap="general_introduce"></image>
+</view>
+<view class="logos"> 
+<view class="logo"  >
+  <image src="https://i.loli.net/2021/08/24/YDQSCTUkGZNHt58.png" data-id="1"  mode="aspectFit" class="logo_img" bindtap="general_introduce"></image>
+  <view class="logo_text">花粉部</view>
+</view>
+<view class="logo">
+  <image src="https://i.loli.net/2021/08/24/8WwUoSnh7GKAMPD.png" data-id="2" mode="aspectFit" class="logo_img" bindtap="general_introduce"></image>
+  <view class="logo_text">技术部 </view>
+</view>
+</view>
+<view class="Recommendations_Bar">
+  <view wx:for="{{group}}" wx:key="id" data-id="{{index}}" class="Recommendation" bindtap="tap_group" style="{{index==group_touch_id? 'background-color: rgba(4, 4, 4, 100); border-radius: 30rpx; color:white;' : ' '}}" > {{item.name}}</view>
+</view>
+<view class="department_display">
+  <view wx:for="{{group[group_touch_id].contain}}"  class="departments" >
+    <image src="{{department[item].s_src}}" mode="widthFix" class="department_img" data-id="{{index}}" bindtap="detail_introduction"></image>
+    <view class="tiltle_and_like">
+    <view class="department_title" data-id="{{index}}" bindtap="detail_introduction">{{department[item].name}}</view>
+    
+    <image class="like" data-id="{{index}}"  src='{{department[item].isclick==true ?"/images/add_1.png":"/images/add_0.png"}}' bindtap="like"> </image>
+  </view>
+    <view class="department_text" data-id="{{index}}" bindtap="detail_introduction">{{department[item].text}}</view>
+  </view>
+</view>
+<view class="bottom_blank"></view>
+
+<cover-view class="bottom_tabbar">
+  <cover-view class="tab-bar-border"></cover-view>
+  <cover-view class="bottom_tabbar_view">
+  <cover-image src="/images/shopping_cart.png" class="bottom_tabbar_img" bindtap="open_shopping_cart"></cover-image>
+  <cover-view class="red_point" style='background-color:{{red_point_color}}' ></cover-view>
+  </cover-view>
+  <cover-view class="bottom_tabbar_view">
+    <cover-image src="/images/search.png" class="bottom_tabbar_img" bindtap="search"></cover-image>
+  </cover-view>
+</cover-view>

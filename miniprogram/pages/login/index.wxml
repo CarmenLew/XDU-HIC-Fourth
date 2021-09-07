@@ -1,0 +1,15 @@
+<image class='background' src="../../images/bg.jpg" mode="aspectFill"></image>
+<view wx:if="{{!hasUserInfo}}">
+    <view class='header'>
+        <image src='{{headimg}}'></image>
+    </view>
+    <view class='content'>
+        <view>HIC招新小程序</view>
+        <view>申请获取以下权限</view>
+        <text>获得你的公开信息(昵称，头像等)</text>
+    </view>
+    <button class='bottom' type='primary' bindtap="getUserProfile" lang="zh_CN">
+        授权登录
+    </button>
+</view>
+ 

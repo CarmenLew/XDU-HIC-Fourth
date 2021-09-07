@@ -1,0 +1,29 @@
+<!--pages/userinfo/userinfo.wxml-->
+<view class="userinfo">
+<view class="userinfo-head">
+  <image src="/images/hic-head.jpg"></image>
+</view>
+  
+  <view class="text">
+
+    <text class="name">姓名:   {{info.Name}}</text>
+    <text class="sex">性别:   {{gender}}</text>  <!--gender定义混乱了 -->
+    <text class="name">年级:   {{info.grade}}</text>
+    <text class="name">生辰:   {{info.birthday}}</text>
+    <text class="major">专业/大类:   {{info.professional}}</text>
+    <text class="stu_number">学号:   {{info.school_id}}</text>
+    <text class="phone_number">手机号:   {{info.phone}}</text>
+    <text class="hobby">个人介绍:   {{info.Personal_introduction}}</text>
+  </view>
+</view>
+
+<view class="feedback">
+  <!-- <view class="feedback-title" style="font-size: 45rpx;">面试结果反馈</view> -->
+  <form bindsubmit="bindFormSubmit">
+  <textarea class="feedback-text" placeholder="点击填写面试意见..." name="textarea" id="" cols="30" rows="10" maxlength="-1" value="{{comment}}" ></textarea>
+  <button form-type="submit"> 保存 </button>
+</form>
+</view>
+
+
+<!--image class="check-img" src="/images/hook.png" bindtap="checkClick"></image-->

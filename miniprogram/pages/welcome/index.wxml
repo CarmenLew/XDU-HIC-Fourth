@@ -1,0 +1,20 @@
+
+<!--页面根标签-->
+<view class="content">
+<!--pics文件夹下的background.jpg文件-->
+<image class='background' src="/images/xd.png" mode="aspectFill"></image>
+<!--页面其它部分-->
+</view>
+<image class="head-img"  src="/images/hic-head.jpg" mode="aspectFill"></image>
+<text class="w_t1">華創</text>
+<text class="w_t2" decode="{{true}}">HUAWEI&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;INNOVATION&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CLUB</text>
+<text class="w_t3">西電華爲創新俱樂部</text>
+
+
+<cover-image class="up-img" bindtap="jmp" src="/images/up.png" animation="{{animation}}"/>
+
+<view class="duration-touch-view" 
+bindtouchstart="touchStart" 
+bindtouchmove="touchMove" 
+bindtouchend="touchEnd" >
+</view>
