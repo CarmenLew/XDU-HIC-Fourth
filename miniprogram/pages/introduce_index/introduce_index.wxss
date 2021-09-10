@@ -163,3 +163,35 @@ page{
   left: 30rpx;
  
 }
+.message_block{
+  padding-top:20rpx ;
+  background-color: white;
+  border-radius: 20rpx ;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+ 
+}
+.message{
+  align-self: center;
+  width: 90%;
+  height: 170rpx;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  justify-content: space-between;
+}
+.message_img{
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 20rpx;
+}
+.group_name{
+  font-size: 35rpx;
+  font-weight: bold;
+}
+.result{
+  font-size: 30rpx;
+  font-weight: bold;
+}

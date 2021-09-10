@@ -26,8 +26,15 @@
     <view class="department_text" data-id="{{index}}" bindtap="detail_introduction">{{department[item].text}}</view>
   </view>
 </view>
-<view class="bottom_blank"></view>
+<view class="message_block" wx:if="{{show_message}}">  
+    <view class="message" wx:for="{{application_result}}">
+      <image class="message_img" src="{{item.img}}"></image>
+      <text class="group_name">{{item.name}}</text>
+      <text class="result">{{item.result}}</text>
+    </view>
+</view>
 
+<view class="bottom_blank"></view>
 <cover-view class="bottom_tabbar">
   <cover-view class="tab-bar-border"></cover-view>
   <cover-view class="bottom_tabbar_view">
@@ -35,6 +42,7 @@
   <!--cover-view class="red_point" style='background-color:{{red_point_color}}' ></cover-view-->
   </cover-view>
   <cover-view class="bottom_tabbar_view">
-    <cover-image src="{{message_src}}" class="bottom_tabbar_img" bindtap="search"></cover-image>
+    <cover-image src="{{message_src}}" class="bottom_tabbar_img" bindtap="show_message"></cover-image>
   </cover-view>
 </cover-view>
+

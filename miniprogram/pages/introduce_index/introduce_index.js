@@ -9,7 +9,7 @@ Page({
     message_src:"/images/message.svg",
     group_touch_id:0,
     select_department_id:[],
-    red_point_color:"white",
+    show_message:false,
     group:[{
       id:0,
       name:"全部",
@@ -163,7 +163,15 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    wx.cloud.callFunction({
+      name:"searchresult"
+    }).then(res=>{
+      console.log(res)
+      this.setData({
+        application_result:res.result.data
+      })
+      console.log(this.data.application_result)
+    })
   },
 
   /**
@@ -330,10 +338,9 @@ Page({
     })
     
   },
-  search:function(){
-    wx.showToast({
-      title: '敬请期待~',
-      icon:'none'
+  show_message:function(){
+    this.setData({
+      show_message:true
     })
   }
 })
