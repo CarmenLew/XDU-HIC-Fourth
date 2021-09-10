@@ -4,7 +4,7 @@
 
 <view class="shopping_cart">
   <view class="red_point" style='background-color:{{red_point_color}}' ></view>
-<image src="/images/shopping_cart.png" class="cart" bindtap="open_shopping_cart"></image>
+<image src="{{order_src}}" class="cart" bindtap="open_shopping_cart"></image>
 
 </view>
 

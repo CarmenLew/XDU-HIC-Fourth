@@ -5,6 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
+    order_src:"/images/order.svg",
+    message_src:"/images/message.svg",
     group_touch_id:0,
     select_department_id:[],
     red_point_color:"white",
@@ -264,11 +266,11 @@ Page({
     if (this.data.select_department_id.length==0){ 
       //未知错误：全部取消like后判断 this.data.select_department_id == [] 也为false，随后改为判断length
       this.setData({
-        red_point_color:"white"
+        order_src:"/images/order.svg"
       })
     }else{
       this.setData({
-        red_point_color:"red"
+        order_src:"/images/order_unread.svg"
       })
     }
   },

@@ -31,10 +31,10 @@
 <cover-view class="bottom_tabbar">
   <cover-view class="tab-bar-border"></cover-view>
   <cover-view class="bottom_tabbar_view">
-  <cover-image src="/images/shopping_cart.png" class="bottom_tabbar_img" bindtap="open_shopping_cart"></cover-image>
-  <cover-view class="red_point" style='background-color:{{red_point_color}}' ></cover-view>
+  <cover-image src="{{order_src}}" class="bottom_tabbar_img" bindtap="open_shopping_cart"></cover-image>
+  <!--cover-view class="red_point" style='background-color:{{red_point_color}}' ></cover-view-->
   </cover-view>
   <cover-view class="bottom_tabbar_view">
-    <cover-image src="/images/search.png" class="bottom_tabbar_img" bindtap="search"></cover-image>
+    <cover-image src="{{message_src}}" class="bottom_tabbar_img" bindtap="search"></cover-image>
   </cover-view>
 </cover-view>

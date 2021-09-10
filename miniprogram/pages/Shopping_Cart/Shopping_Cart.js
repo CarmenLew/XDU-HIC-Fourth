@@ -137,7 +137,14 @@ Page({
     /*for (var i in this.data.final_selected)
     console.log("提交"+this.data.department[this.data.final_selected[i]].name)*/
     var that = this
-   
+    wx.cloud.callFunction({
+      name:"getTemplateID"
+    }).then(res=>{
+      console.log(res)
+      that.data.templateID = res.result.data.template
+      console.log(that.data.templateID)
+    })  
+
     if (this.data.final_selected.length >0)
     {
     wx.showModal({
@@ -150,8 +157,7 @@ Page({
             console.log(that.data.department[that.data.final_selected[i]].table)
               that.data.final_selected_group_name.push(that.data.department[that.data.final_selected[i]].table)
           }
-         
-         
+          
           wx.showLoading({
             title: '正在发送',
           })
@@ -171,9 +177,6 @@ Page({
                 title: '已发送',
                 icon:'success'
               })
-
-             
-              
             },
             fail:res =>{
               wx.showToast({
@@ -182,6 +185,13 @@ Page({
               })
             }
           }) //提交意愿函数待上线，目前缺少前方页面传来的数据
+          var templateID = that.data.templateID
+          wx.requestSubscribeMessage({
+            tmplIds: [templateID],
+            success: (result) => {console.log("获取订阅消息的用户权限")},
+            fail: (result) => {console.log(result)},
+            complete: (res) => {},
+          })
         }
       }
     })
