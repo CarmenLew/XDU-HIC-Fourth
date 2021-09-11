@@ -3,7 +3,12 @@
 
 
 <view class="userinfo">
+<!--
   <image class="head-img"  src="{{userinfo.avatarUrl}}"></image>
+-->
+<view class="head-img">
+  <open-data type="userAvatarUrl"></open-data>
+</view>
   <view class="info_right">
     <view class="name_line">
       <text class='name'>{{userinfo.Name}}</text>

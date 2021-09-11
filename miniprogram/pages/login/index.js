@@ -80,6 +80,8 @@ Page({
             //console.log(resp)
             let res = resp.result;
             console.log(res);
+            console.log("测试id");
+            console.log(resp);
             //res = 1;
             //console.log(resp.resulres);
             let  jmp = '';//若为管理员，则返回1；若为老成员，则返回0；若为新成员，则返回2

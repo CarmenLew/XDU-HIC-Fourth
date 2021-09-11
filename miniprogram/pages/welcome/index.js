@@ -46,11 +46,47 @@ Page({
       // 向上滑动
       if (touchMoveY - touchStartY <= -30 && time < 10) {
         console.log("向上滑动");
+        /*
         wx.navigateTo({
           title: "登陆",
               url: '../login/index',//要跳转到的页面路径
               //url: '../test/index',
-      }) 
+        })
+        */ 
+        
+       wx.cloud.callFunction({
+        name: 'sign',
+        config: {
+          env: this.data.envId
+        },
+        data: {
+          type: 'selectOpenid'
+        }
+      }).then((resp) => {
+       // console.log("qiansuccessgetauth")
+        //console.log(resp)
+        let res = resp.result;
+        console.log(res);
+        //res = 1;
+        //console.log(resp.resulres);
+        let  jmp = '';//若为管理员，则返回1；若为老成员，则返回0；若为新成员，则返回2
+        //1管理员，0老成员，2新成员
+        if(res == 1) {//管理员
+          jmp = '../user/user?status=1';
+        } else if(res == 0) {//老成员
+          jmp = '../user/user?status=0';
+        } else if(res == 2){ //新成员
+          jmp = '/pages/newuser_edit_info/newuser_edit_info';
+        }
+        
+        wx.reLaunch({
+          title: "跳转",
+              url: jmp,//要跳转到的页面路径
+              //url: '../test/index',
+        })
+     })
+
+
       }
     clearInterval(interval); // 清除setInterval  
     time = 0;
@@ -132,48 +168,45 @@ Page({
    //js部分示例代码
   //跳转到非tabBar页面  
   jmp: function() {
+    /*
     wx.navigateTo({
       title: "登陆",
           url: '../login/index',//要跳转到的页面路径
           //url: '../test/index',
   }) 
-  },
+  */
 
-  test:function() {
-   //console.log(isLogin)
-    wx.login({
-      success(res) {
-        console.log(res.code)
-      },
-      fail(res) {
-        console.log("Not OK!")
-      },
-      complete(res) {
-        console.log("Successful!")
-      }
-    })
+ wx.cloud.callFunction({
+  name: 'sign',
+  config: {
+    env: this.data.envId
+  },
+  data: {
+    type: 'selectOpenid'
+  }
+}).then((resp) => {
+ // console.log("qiansuccessgetauth")
+  //console.log(resp)
+  let res = resp.result;
+  console.log(res);
+  //res = 1;
+  //console.log(resp.resulres);
+  let  jmp = '';//若为管理员，则返回1；若为老成员，则返回0；若为新成员，则返回2
+  //1管理员，0老成员，2新成员
+  if(res == 1) {//管理员
+    jmp = '../user/user?status=1';
+  } else if(res == 0) {//老成员
+    jmp = '../user/user?status=0';
+  } else if(res == 2){ //新成员
+    jmp = '/pages/newuser_edit_info/newuser_edit_info';
+  }
   
-  },
-
-  onLoad() {
-    if (wx.getUserProfile) {
-      this.setData({
-        canIUseGetUserProfile: true
-      })
-    }
-  },
-  getUserProfile(e) {
-    // 推荐使用wx.getUserProfile获取用户信息，开发者每次通过该接口获取用户个人信息均需用户确认
-    // 开发者妥善保管用户快速填写的头像昵称，避免重复弹窗
-    wx.getUserProfile({
-      desc: '用于完善会员资料', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
-      success: (res) => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
-      }
-    })
+  wx.reLaunch({
+    title: "跳转",
+        url: jmp,//要跳转到的页面路径
+        //url: '../test/index',
+  })
+})
   },
 
 })
