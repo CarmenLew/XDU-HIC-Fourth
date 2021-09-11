@@ -357,8 +357,6 @@ Page({
       delay: 0
     })
     this.animation = animation
-    console.log(this)
-    console.log(this.animation)
     animation.translateY(300).step()
     this.setData({
       animationData: animation.export(),

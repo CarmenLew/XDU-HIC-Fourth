@@ -60,7 +60,13 @@ Page({
       })
       that.deal_data()
     })/* 回调函数需要时间执行，会导致data还没出来就执行下面的代码，导致数据错乱*/
-    
+    wx.cloud.callFunction({
+      name:"getTemplateID"
+    }).then(res=>{
+      console.log(res)
+      that.data.templateID = res.result.data.template
+      console.log(that.data.templateID)
+    })  
   },
   
   /**
@@ -137,13 +143,7 @@ Page({
     /*for (var i in this.data.final_selected)
     console.log("提交"+this.data.department[this.data.final_selected[i]].name)*/
     var that = this
-    wx.cloud.callFunction({
-      name:"getTemplateID"
-    }).then(res=>{
-      console.log(res)
-      that.data.templateID = res.result.data.template
-      console.log(that.data.templateID)
-    })  
+   
 
     if (this.data.final_selected.length >0)
     {
