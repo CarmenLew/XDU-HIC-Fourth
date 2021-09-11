@@ -6,7 +6,7 @@ Page({
    */
   data: {
     is_add:false,
-    order_src:"/images/order.svg"
+    order_src:"/images/order.png"
   },
 
   /**
@@ -109,11 +109,11 @@ Page({
     if (getApp().globalData.select_department_id.length==0){ 
       //未知错误：全部取消like后判断 this.data.select_department_id == [] 也为false，随后改为判断length
       this.setData({
-        order_src:"/images/order.svg"
+        order_src:"/images/order.png"
       })
     }else{
       this.setData({
-        order_src:"/images/order_unread.svg",
+        order_src:"/images/order_unread.png",
       })
     }
   },

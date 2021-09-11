@@ -5,11 +5,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-    order_src:"/images/order.svg",
-    message_src:"/images/message.svg",
+    order_src:"/images/order.png",
+    message_src:"/images/message.png",
     group_touch_id:0,
     select_department_id:[],
-    show_message:false,
+    show_message: false,
+    animationData: {},
     group:[{
       id:0,
       name:"全部",
@@ -274,11 +275,11 @@ Page({
     if (this.data.select_department_id.length==0){ 
       //未知错误：全部取消like后判断 this.data.select_department_id == [] 也为false，随后改为判断length
       this.setData({
-        order_src:"/images/order.svg"
+        order_src:"/images/order.png"
       })
     }else{
       this.setData({
-        order_src:"/images/order_unread.svg"
+        order_src:"/images/order_unread.png"
       })
     }
   },
@@ -338,9 +339,58 @@ Page({
     })
     
   },
-  show_message:function(){
-    this.setData({
-      show_message:true
+  message:function(){
+    if (this.data.show_message == false)
+    {
+      this.showModal()
+    }   
+     else{
+      this.hideModal()
+     }
+  },
+  showModal: function() {
+    var that = this;
+    // 显示遮罩层 
+    var animation = wx.createAnimation({
+      duration: 300,
+      timingFunction: "linear",
+      delay: 0
     })
+    this.animation = animation
+    console.log(this)
+    console.log(this.animation)
+    animation.translateY(300).step()
+    this.setData({
+      animationData: animation.export(),
+      show_message: true
+    })
+    setTimeout(function() {
+      animation.translateY(0).step()
+      this.setData({
+        animationData: animation.export()
+      })
+    }.bind(this), 200)
+  },
+  // 隐藏弹框
+  hideModal: function() {
+    var that = this;
+    // 隐藏遮罩层 
+    var animation = wx.createAnimation({
+      duration: 300,
+      timingFunction: "linear",
+      delay: 0
+    })
+    this.animation = animation
+    animation.translateY(300).step()
+    this.setData({
+      animationData: animation.export(),
+    })
+    setTimeout(function() {
+      animation.translateY(0).step()
+      this.setData({
+        animationData: animation.export(),
+        show_message: false
+      })
+    }.bind(this), 200)
   }
 })
