@@ -199,9 +199,13 @@
        }
      }).then(res=>{
        console.log(res)
-       email = res.result.result.data[0].email;
-       name = res.result.result.data[0].Name;
+       email = res.result.data[0].email;
+       name = res.result.data[0].Name;
        group = that.data.group
+       console.log(name)
+       console.log(email)
+       console.log(result)
+       console.log(group)
        if (email != undefined){
         wx.request({
         url: 'https://ksfu.top/hic/mail.php',
@@ -210,7 +214,7 @@
           name:name,
           email:email,
           group:group,
-          res:resutl
+          res:result
         }
        })
      }
