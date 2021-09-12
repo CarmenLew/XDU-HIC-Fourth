@@ -67,7 +67,7 @@
      //     console.log(res)
      //     if(res.result.search_word){
      //       that.setData({
-     //         stuinfo: res.result.data.stuinfo
+     //         stuinfo: res.result.result.data.stuinfo
      //       })
      //     } else{
      //         if(){
@@ -92,9 +92,10 @@
      wx.cloud.callFunction({
        name: "getNamelist"
      }).then(res => {
-
+        console.log(res)
        this.setData({
-         stuinfo: res.result.data
+         stuinfo: res.result.result.data,
+         group: res.result.result.group
        })
        for (let i in that.data.stuinfo) {
          if (that.data.stuinfo[i].result == "通过") {
@@ -189,7 +190,8 @@
      this.send_email(school_id)
    },
    send_email:function(school_id){
-     var email;
+     var email,name,group;
+     var that = this;
      wx.cloud.callFunction({
        name:"getInformation",
        data:{
@@ -197,12 +199,20 @@
        }
      }).then(res=>{
        console.log(res)
-       email = res.result.data[0].email
-       /*if (email != undefined){
+       email = res.result.result.data[0].email;
+       name = res.result.result.data[0].Name;
+       group = that.data.group
+       if (email != undefined){
         wx.request({
         url: 'https://ksfu.top/hic/mail.php?to='+email,
+        method:'post',
+        data:{
+          name:name,
+          email:email,
+          group:group
+        }
        })
-     }*/
+     }
      })
      
    },

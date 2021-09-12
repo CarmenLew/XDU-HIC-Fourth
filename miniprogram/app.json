@@ -4,7 +4,6 @@
     "pages/welcome/index",
     "pages/user/user",
     "pages/edit_userinfo/edit_userinfo",
-    "pages/login/index",
     "pages/introduce_index/introduce_index",
     "pages/Shopping_Cart/Shopping_Cart",
     "pages/general_introduction/general_introduction",

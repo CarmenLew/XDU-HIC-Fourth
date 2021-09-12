@@ -54,5 +54,6 @@ exports.main = async (event, context) => {
     result.errCode = 0
     result.errMsg = '获取成功'
     result.data = data
-    return result
+    result.group = groupName
+    return {result}
 }

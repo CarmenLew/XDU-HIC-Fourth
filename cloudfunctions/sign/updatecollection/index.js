@@ -19,6 +19,7 @@ exports.main = async (event, context) => {
   grade:event.grade,
   professional:event.professional,
   school_id:event.school_id,
+  email:event.email,
   phone:event.phone,
   Personal_introduction:event.Personal_introduction,
   }
