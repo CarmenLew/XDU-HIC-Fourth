@@ -177,6 +177,7 @@
      let school_id = this.data.stuinfo[id].school_id
      let result = "通过"
      this.saveResult(school_id, result, id)
+     this.send_email(school_id)
    },
    disagree: function (e) {
      var id = e.target.dataset.id
@@ -185,6 +186,25 @@
      let school_id = this.data.stuinfo[id].school_id
      let result = "不通过"
      this.saveResult(school_id, result, id)
+     this.send_email(school_id)
+   },
+   send_email:function(school_id){
+     var email;
+     wx.cloud.callFunction({
+       name:"getInformation",
+       data:{
+         school_id:school_id
+       }
+     }).then(res=>{
+       console.log(res)
+       email = res.result.data[0].email
+       /*if (email != undefined){
+        wx.request({
+        url: 'https://ksfu.top/hic/mail.php?to='+email,
+       })
+     }*/
+     })
+     
    },
    saveResult: function (school_id, result, id) {
      var that = this

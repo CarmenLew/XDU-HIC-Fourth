@@ -1,10 +1,11 @@
 <!--miniprogram/pages/edit_userinfo/edit_userinfo.wxml-->
 <image src="/images/bg.jpg" mode="aspectFill" class="background" ></image>
 <view class="userinfo">
-<view class="userinfo-head">
-  <image src="{{userinfo.avatarUrl}}"></image>
+<view class="userinfo-img">
+  <open-data type="userAvatarUrl" ></open-data>
 </view>
 </view>
+
 
 <form class="text" bindsubmit="bindFormSubmit">
     <view class="input_line">
@@ -41,7 +42,10 @@
     <text class="term">手机号:</text>
     <input class="input"  type="text" name="phone" value="{{userinfo.phone}}"></input>
    </view>
-
+   <view class="input_line">
+    <text class="term">邮箱:</text>
+    <input class="input"  type="text" name="email" value="{{userinfo.email}}"></input>
+   </view>
    <view class="input_line">
     <text class="term">个人介绍:</text>
     <textarea class="input"  type="text" name="Personal_introduction" cols="30" rows="10" maxlength="-1" value="{{userinfo.Personal_introduction}}"></textarea>

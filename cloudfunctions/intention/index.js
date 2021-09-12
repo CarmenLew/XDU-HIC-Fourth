@@ -7,16 +7,6 @@ cloud.init()
 exports.main = async (event, context) => {
   const db = cloud.database()
   const wxContext = cloud.getWXContext()
-  console.log(event)
-  to_add_data = {
-    //新生姓名
-     Name:event.Name,
-     //学号
-    // avatarUrl:event.avatarUrl,
-     school_id:event.school_id,
-    openid: wxContext.OPENID,
-    is_passed: 0, //is_pass==0为未审核，1为通过，2为不通过
-  }
   var member;
   await db.collection("user")
     .where({
@@ -26,13 +16,24 @@ exports.main = async (event, context) => {
     .then(res => {
       console.log(res)
       member = res.data[0]
+      console.log(member)
     })
-
+    
+  to_add_data = {
+    //新生姓名
+     Name:member.Name,
+     //学号
+     avatarUrl:member.avatarUrl,
+     school_id:member.school_id,
+    openid: wxContext.OPENID,
+    is_passed: 0, //is_pass==0为未审核，1为通过，2为不通过
+  }
+  
   for (let i = 0; i < event.yiyuan.length; i++) {
     var f = 0 // f==0代表改用户在该分表中未创建信息，f==1则代表已创建。若未创建则创建信息，否则不作处理。
     await db.collection(event.yiyuan[i])
       .where({
-        school_id: event.school_id
+        openid: wxContext.OPENID
       })
       .get()
       .then(res => {

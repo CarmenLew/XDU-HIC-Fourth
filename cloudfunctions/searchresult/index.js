@@ -30,7 +30,8 @@ exports.main = async (event, context) => {
   })
  }
   var result=[];
-  if (application.length >0){
+  if (application!=undefined )
+  if ( application.length >0){
     for (let i in application){
       await db.collection(application[i])
       .where({

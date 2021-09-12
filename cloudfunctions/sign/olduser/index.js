@@ -18,6 +18,7 @@ exports.main = async (event, context) => {
   professional:true,
   school_id:true,
   phone:true,
+  email:true,
   Personal_introduction:true,
   is_passed:true,
   title:true

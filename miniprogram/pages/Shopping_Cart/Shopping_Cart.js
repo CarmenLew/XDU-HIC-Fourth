@@ -164,9 +164,6 @@ Page({
           wx.cloud.callFunction({
             name:'intention',
             data:{
-                Name:app.globalData.userinfo.Name,
-                school_id:app.globalData.userinfo.school_id,
-                avatarUrl:app.globalData.userinfo.avatarUrl,
                 yiyuan:that.data.final_selected_group_name
             },
             success:res =>{

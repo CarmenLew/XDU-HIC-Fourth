@@ -43,7 +43,7 @@ Page({
       }
      }else if (options.status == "2"){
       console.log("您是新成员")
-      
+      getApp().globalData.userinfo.title = "华为创新俱乐部"
      }
      //可能会有异步bug
   },

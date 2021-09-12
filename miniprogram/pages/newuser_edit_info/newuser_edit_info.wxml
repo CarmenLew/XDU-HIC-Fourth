@@ -41,6 +41,10 @@
     <text class="term">怎么联系呀:</text>
     <input class="input"  type="text" name="phone" placeholder="手机号码哦..."></input>
    </view>
+   <view class="input_line">
+    <text class="term">邮箱:</text>
+    <input class="input"  type="text" name="email" placeholder="用来接收面试结果哦~"></input>
+   </view>
 
    <view class="input_line">
     <text class="term">想了解你更多：</text>

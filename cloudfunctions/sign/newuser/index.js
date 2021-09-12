@@ -4,10 +4,11 @@ cloud.init()
 
 exports.main = async (event, context) => {
     const db = cloud.database()
+    const wxContext = cloud.getWXContext()
    //构造要添加的数据
    to_add_data = {
     //openid
-    openid:event.OPENID,
+    openid:wxContext.OPENID,
     //注册时间
     signTime: new Date(),
     //头像地址
@@ -26,6 +27,8 @@ exports.main = async (event, context) => {
     school_id:event.school_id,
     //手机号
     phone:event.phone,
+    //邮箱
+    email:event.email,
     //个人简介
     Personal_introduction:event.Personal_introduction,
     //是否为管理员
