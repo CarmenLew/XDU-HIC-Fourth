@@ -209,12 +209,19 @@
        if (email != undefined){
         wx.request({
         url: 'https://ksfu.top/hic/mail.php',
-        method:'post',
+        method:'get',
+        header: {'content-type': 'application/x-www-form-urlencoded'},
         data:{
           name:name,
           email:email,
           group:group,
           res:result
+        },
+        success(res){
+          console.log(res)
+        },
+        fail(res){
+          console.log(res)
         }
        })
      }
