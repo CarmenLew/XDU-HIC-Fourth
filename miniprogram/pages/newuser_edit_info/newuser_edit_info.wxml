@@ -9,7 +9,7 @@
 <form class="text" bindsubmit="bindFormSubmit">
     <view class="input_line">
     <text class="term">怎么称呼:</text>
-    <input class="input"  type="text" name="Name"></input>
+    <input class="input"  type="text" name="Name" placeholder="*"></input>
    </view>
    <view class="input_line">
     <text class="term" >性别:</text>

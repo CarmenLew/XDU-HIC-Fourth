@@ -35,7 +35,7 @@
 
    <view class="input_line">
     <text class="term">学号:</text>
-    <input class="input"  type="text" name="school_id" value="{{userinfo.school_id}}"></input>
+    <input class="input"  type="text" name="school_id" disabled="true" value="{{userinfo.school_id}}"></input>
    </view>
 
    <view class="input_line">
