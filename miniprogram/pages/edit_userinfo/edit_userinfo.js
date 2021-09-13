@@ -95,7 +95,7 @@ Page({
       }).then(res=>{
         console.log(res)
         getApp().globalData.userinfo = res.result
-        wx.navigateTo({
+        wx.reLaunch({
           url: '/pages/user/user',
         })
       })   

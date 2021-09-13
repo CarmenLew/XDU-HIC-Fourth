@@ -13,7 +13,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.red_point()
     getApp().globalData.is_add = false;
     console.log(options)
     var that = this
@@ -104,18 +103,14 @@ Page({
     console.log(select_department_id)
     console.log(getApp().globalData.select_department_id)
     this.red_point()
+    wx.showToast({
+      title: '',
+    })
   },
   red_point:function(){
-    if (getApp().globalData.select_department_id.length==0){ 
-      //未知错误：全部取消like后判断 this.data.select_department_id == [] 也为false，随后改为判断length
       this.setData({
-        order_src:"/images/order.png"
+        order_src:"/images/order_unread.png"
       })
-    }else{
-      this.setData({
-        order_src:"/images/order_unread.png",
-      })
-    }
   },
   open_shopping_cart:function(){
     var that = this

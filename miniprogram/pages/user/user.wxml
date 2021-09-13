@@ -66,6 +66,10 @@
   <text class='text-intro' style="top: 160rpx;">期待与你相遇</text>
   
 </view>
+<view class="message" bindtap="show_message">
+<image src="/images/index_message.png" class="message_icon"></image>
+<text class="message_text">{{message_title}}</text>
+</view>
 
 
 

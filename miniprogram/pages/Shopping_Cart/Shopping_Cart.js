@@ -73,7 +73,16 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    var that = this
+    wx.cloud.callFunction({
+      name:"message"
+    }).then(res=>{
+      console.log(res)
+      that.setData({
+        message_title:res.result.title,
+        message_content:res.result.content
+      })
+    })
   },
 
   /**
@@ -157,10 +166,12 @@ Page({
             console.log(that.data.department[that.data.final_selected[i]].table)
               that.data.final_selected_group_name.push(that.data.department[that.data.final_selected[i]].table)
           }
+            wx.showModal({
+              title:that.data.message_title,
+              content:that.data.message_content
+            })
           
-          wx.showLoading({
-            title: '正在发送',
-          })
+          
           wx.cloud.callFunction({
             name:'intention',
             data:{

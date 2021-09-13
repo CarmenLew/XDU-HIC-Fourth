@@ -52,7 +52,17 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    
+    var that = this
+    wx.cloud.callFunction({
+      name:"message"
+    }).then(res=>{
+      console.log(res)
+      that.setData({
+        message_title:res.result.title,
+        message_content:res.result.content
+      })
+    })
+
     this.setData({
       userinfo:getApp().globalData.userinfo
    })
@@ -122,6 +132,13 @@ Page({
   edit_userinfo:function(){
     wx.navigateTo({
       url: '/pages/edit_userinfo/edit_userinfo',
+    })
+  },
+  show_message:function(){
+    var that = this
+    wx.showModal({
+      title:that.data.message_title,
+      content:that.data.message_content
     })
   },
   edit_title:function(){

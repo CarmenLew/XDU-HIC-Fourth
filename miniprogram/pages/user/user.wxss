@@ -115,7 +115,34 @@
   font-weight: 900;
   font-family: SourceHanSansSC-bold;
 }
-
+.message{
+  width: 700rpx;
+  margin: 4%;
+  margin-bottom: 0;
+  height: 80rpx;
+  display: flex;
+  flex-direction: row;
+/*  line-height: 20px;*/
+  border-radius: 22rpx 22rpx 22rpx 22rpx;
+  background-color: rgba(255, 255, 255, 100);
+  
+  box-shadow: 0rpx 0rpx 6rpx 0rpx rgba(0, 0, 0, 0.4);
+}
+.message_icon{
+  margin-left: 60rpx;
+  margin-right: 180rpx;
+  width: 50rpx;
+  height: 50rpx;
+  align-self: center;
+  justify-self: center;
+}
+.message_text{
+  font-size: 35rpx;
+  display: flex;
+  align-self: center;
+  justify-self: center;
+  justify-content: center;
+}
 .square{
  /* position: absolute;
   left: 0;
